@@ -1,0 +1,24 @@
+{% extends "personas/base.html" %}
+
+{%block title %} Listar {% endblock%}
+
+{% block content%}
+<h1>Boton listar</h1>
+    <br><br>
+    <form action="mostrar_alumnos" method="POST">
+        {% csrf_token %}
+        <label > Boton para listar:</label>
+        <input type="submit" name="opcion" value="Listar">
+
+
+
+    </form>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
+
+
+
+

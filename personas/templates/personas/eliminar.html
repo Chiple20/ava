@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eliminar por rut</title>
+</head>
+<body>
+    <h1>Eliminar por rut</h1>
+    <br><br>
+    <form action="eliminar_por_rut" method="POST">
+        {% csrf_token %}
+        <label >Ingrese rut a eliminar :</label>
+        <input type="text" name="rut">
+        <input type="submit" name="opcion" value="Eliminar">
+
+
+
+    </form>
+</body>
+</html>

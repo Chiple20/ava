@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Editar</title>
+</head>
+<body>
+    <h1>Editar Dato de Alumno</h1>
+    <br><br>
+    <form action="actualizar_alumno" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="id_alumno" value="{{alumno.id_alumno}}">
+        <label>Rut      :</label><input type="text" name="rut" value="{{alumno.rut}}"><br>
+        <label>Nombre   :</label><input type="text" name="nombre" value="{{alumno.nombre}}"><br>
+        <label>A.Paterno:</label><input type="text" name="aPaterno" value="{{alumno.apellido_paterno}}"><br>
+        <label>A.Materno:</label><input type="text" name="aMaterno" value="{{alumno.apellido_materno}}"><br>
+        <label>Fecha Nac:</label><input type="date" name="fechaNac" value="{{alumno.fecha_nacimiento|date:'Y-m-d'  }}"><br>
+        <label>Género   :</label>
+         <select name="genero" value="{{alumno.genero}}">
+             <option value="Seleccionar" disabled>Seleccionar</option>
+             {% if alumno.genero == "masculino" %}
+                 <option value="masculino" selected>Masculino</option>
+             {% else %}
+                 <option value="masculino">Masculino</option>
+             {% endif %}
+             {% if alumno.genero == "femenino" %}
+                 <option value="femenino" selected>Femenino</option>
+             {% else %}
+             <option value="femenino">Femenino</option>
+             {% endif %} 
+            </select>
+        <label>Foto     :</label><td>
+            <input type="file" name="foto" id="foto">
+       {% if alumno.foto %}
+          <p>{{alumno.foto.url }}</p>
+         <p><img src="{{alumno.foto.url}}"></p>
+       {% endif %}
+
+
+        
+        <br><br>
+        <input type="submit" name="opcion" value="Actualizar">
+    </form>
+</body>
+</html>

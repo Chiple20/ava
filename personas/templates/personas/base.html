@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title> {% block title%}   {% endblock %}</title>
+
+    <script src="ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+      <link href="fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  />
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!--
+Webinar Git
+us.bbcollab.com/guest/c6c508e8111a44ab991d4b001e20086c
+miércoles 21  18:30 a 19:30
+-->
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Alumnos</a></li>
+            <li><a href="listar">listar</a></li>
+            <li><a href="#">Productos</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
+
+    {% block javascript%}
+
+    {% endblock%}
+</body>
+</html>

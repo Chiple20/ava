@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Agregar</title>
+</head>
+<body>
+    <h1>Agregar Alumno</h1>
+    <br><br>
+    <form action="modificar_alumno" method="POST">
+        {% csrf_token %}
+        <label>Rut      :</label><input type="text" name="rut">{{alumno.rut}}<br>
+        <label>Nombre   :</label><input type="text" name="nombre">{{alumno.nombre}}<br>
+        <label>A.Paterno:</label><input type="text" name="aPaterno">{{alumno.apellido_paterno}}<br>
+        <label>A.Materno:</label><input type="text" name="aMaterno">{{alumno.apellido_materno}}<br>
+        <label>Fecha Nac:</label><input type="date" name="fechaNac">{{alumno.fecha_nacimiento}}<br>
+        <label>Género   :</label>
+         <select name="genero">
+             <option value="Seleccionar" disabled>Seleccionar</option>
+             <option value="masculino">Masculino</option>
+             <option value="femenino">Femenino</option>
+         </select>
+        <br><br>
+        <input type="submit" name="opcion" value="Grabar">
+    </form>
+</body>
+</html>
